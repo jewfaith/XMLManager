@@ -6,7 +6,6 @@ python main.py
 
 ```plaintext
 main.py
-XMLManager.exe
 
 interfaces/
 ├── console_interface.py
