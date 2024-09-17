@@ -1,6 +1,6 @@
 ## Setup
 
-- Python 3.7 *or higher*
+- Python 3.7 _or higher_
 
 ```bash
 git clone https://github.com/jewfaith/XMLManager.git
@@ -15,23 +15,23 @@ python main.py
 ## Layout
 
 ```plaintext
-main.py                               # Entry point for the application
+main.py
 
 interfaces/
-├── console_interface.py              # Defines the IConsole interface
-└── xml_repository_interface.py       # Defines the IXMLRepository interface
+├── console_interface.py
+└── xml_repository_interface.py
 
 menus/
-├── main_menu.py                      # Manages the main menu
-├── items_menu.py                     # Manages item-related actions
-├── values_menu.py                    # Manages value-related actions
-└── view_values_menu.py               # Handles value viewing
+├── main_menu.py
+├── items_menu.py
+├── values_menu.py
+└── view_values_menu.py
 
 repositories/
-└── xml_repository.py                 # Implements XML repository operations
+└── xml_repository.py
 
 utils/
-└── console.py                        # Provides console utility functions
+└── console.py
 
-README.md                             # Project documentation
+README.md
 ```
