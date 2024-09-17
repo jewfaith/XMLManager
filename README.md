@@ -1,7 +1,3 @@
-## Setup
-
-- Python 3.7 _or higher_
-
 ```bash
 git clone https://github.com/jewfaith/XMLManager.git
 
@@ -11,8 +7,6 @@ pip install colorama
 
 python main.py
 ```
-
-## Layout
 
 ```plaintext
 main.py
