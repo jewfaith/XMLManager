@@ -31,9 +31,9 @@ def handle_items_menu(repository: XMLRepository) -> None:
 
 def add_item(repository: XMLRepository) -> None:
     """Add a new item to the XML root."""
-    Console.clear_console()
-    Console.print_title("Add New Item")
     while True:
+        Console.clear_console()
+        Console.print_title("Add New Item")
         item_name = input("Item Name: ").strip()
         if item_name:
             root = repository.get_root()

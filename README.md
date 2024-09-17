@@ -9,6 +9,8 @@ A versatile console-based application for managing XML data. This project allows
 ```bash
 git clone https://github.com/jewfaith/XMLManager.git
 
+cd XMLManager-main/
+
 pip install colorama
 
 python main.py

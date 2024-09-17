@@ -57,52 +57,55 @@ def add_value(repository: XMLRepository) -> None:
 def remove_value(repository: XMLRepository) -> None:
     """Remove a value from the selected item."""
     root = repository.get_root()
-    items = root.findall('item')
-    
+    items = root.findall("item")
+
     if not items:
         Console.print_warning("No items available to remove values")
         input()
         return
-    
+
     item_name = select_item(items)
     if item_name:
-        item = next((item for item in items if item.get('name') == item_name), None)
-        
+        item = next((item for item in items if item.get("name") == item_name), None)
+
         if item is None:
             Console.print_warning("Selected item not found")
             input()
             return
-        
-        values = item.findall('value')
-        if values:
+
+        values = item.findall("value")
+        if not values:
+            Console.print_warning("No values available to remove")
+            input()
+            return
+
+        while True:
             Console.clear_console()
             Console.print_title("Remove Value")
             for i, value in enumerate(values, start=1):
                 print(f"{i}. {value.get('text')}")
-        else:
-            Console.print_warning("No values available to remove")
-        
-        while True:
+
             value_text = input("Select an option: ").strip()
-            
+
             if value_text:
-                value_to_remove = next((value for value in values if value.get('text') == value_text), None)
-                
+                value_to_remove = next(
+                    (value for value in values if value.get("text") == value_text), None
+                )
+
                 if value_to_remove:
                     item.remove(value_to_remove)
                     repository.save()
                     Console.print_success("Value Removed Successfully")
                     return
-                
+
                 Console.print_warning("Value Not Found")
             else:
                 Console.print_error("Value Required")
-            
+
             input()
     else:
         Console.print_warning("No valid item selected")
-    
-    input()
+        input()
 
 def select_item(items: list[ET.Element]) -> str:
     """Select an item from the list of items."""
