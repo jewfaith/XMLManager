@@ -1,7 +1,3 @@
-## Overview
-
-A versatile console-based application for managing XML data. This project allows users to handle items and values within an XML file using a menu-driven interface. It includes functionalities to add, remove, and view items and values, all managed through a user-friendly console interface.
-
 ## Setup
 
 - Python 3.7 *or higher*
