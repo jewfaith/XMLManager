@@ -32,7 +32,7 @@ def display_values_menu(repository: XMLRepository) -> None:
                 selected_item = items[item_index]
 
                 Console.clear_console()
-                Console.print_title(f"Values for {selected_item.get('name')}")
+                Console.print_title(f"{selected_item.get('name')} value")
 
                 values = selected_item.findall('value')
 

@@ -1,4 +1,5 @@
 import os
+from colorama import Fore, Style
 
 class Console:
     """Utility class for console operations."""
@@ -18,17 +19,22 @@ class Console:
     @staticmethod
     def print_success(message: str) -> None:
         """Print a success message in green."""
-        print(f"\033[92m{message}\033[0m")  # Green
-
+        print(Fore.GREEN + message + Style.RESET_ALL)
+    
     @staticmethod
     def print_warning(message: str) -> None:
         """Print a warning message in yellow."""
-        print(f"\033[93m{message}\033[0m")  # Yellow
-
+        print(Fore.YELLOW + message + Style.RESET_ALL)
+    
     @staticmethod
     def print_error(message: str) -> None:
         """Print an error message in red."""
-        print(f"\033[91m{message}\033[0m")  # Red
+        print(Fore.RED + message + Style.RESET_ALL)
+
+    @staticmethod
+    def print_info(message: str) -> None:
+        """Print an informational message in cyan."""
+        print(Fore.CYAN + message + Style.RESET_ALL)
 
     @staticmethod
     def prompt(message: str) -> str:

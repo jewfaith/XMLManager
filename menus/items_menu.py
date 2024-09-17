@@ -65,7 +65,7 @@ def remove_item(repository: XMLRepository) -> None:
     for index, item in enumerate(items, start=1):
         print(f"{index}. {item.get('name')}")
     
-    item_index = Console.prompt("Select item number to remove").strip()
+    item_index = Console.prompt("Select an option").strip()
     
     try:
         item_index = int(item_index)
@@ -77,5 +77,5 @@ def remove_item(repository: XMLRepository) -> None:
         else:
             Console.print_warning("Invalid item number")
     except ValueError:
-        Console.print_warning("Invalid input. Please enter a number")
+        Console.print_warning("Please enter a number")
     input()
